@@ -296,7 +296,156 @@
   width: 403px;
   font-size: 0.875rem;
 }
+/* body {
+  font-family: Arial, sans-serif;
+  background-image:url("../images/backimage2.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+} */
 
+.custom-class {
+  font-family: Arial, sans-serif;
+  background-image:url("../images/backimage2.jpg");
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 600px;
+  height: 750px; 
+  margin-bottom: 20px;
+  overflow: auto; 
+}
+.form-section {
+  display: none;
+}
+
+.form-section.active {
+  display: block;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select, textarea {
+  width: calc(100%);
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  width: 100%;
+  padding: 10px;
+  background-color: #acb802;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #acb802;
+}
+
+.progress-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.progress-circle {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: #acb802;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-circle.active {
+  background-color: #008f0c;
+}
+
+.progress-circle::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 50px;
+  height: 2px;
+  background-color: #ddd;
+  z-index: -1;
+}
+
+.progress-circle.active::before {
+  background-color: #007BFF;
+}
+
+.progress-circle:last-child::before {
+  display: none;
+}
+
+.form-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.form-group .form-item {
+  width: 48%;
+}
+
+.form-group .form-item.full-width {
+  width: 100%;
+}
+
+.strength-indicator {
+display: flex;
+margin-top: 5px;
+}
+
+.strength-box {
+width: 20px;
+height: 20px;
+margin-right: 5px;
+border: 1px solid #ccc; 
+display: inline-block;
+}
+
+.very-weak { background-color: red; }
+.weak { background-color: orange; }
+.medium { background-color: yellow; }
+.strong { background-color: lightgreen; }
+.very-strong { background-color: green; }
+
+.error-message {
+color: red;
+font-size: 12px;
+}
 .u-section-1 .u-line-5 {
   height: 0;
   border-style: solid;

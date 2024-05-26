@@ -26,11 +26,12 @@
 				"https://www.instagram.com/diengcalderarace"
 		]
 }</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <meta name="theme-color" content="#478ac9">
     <meta property="og:title" content="Registration">
     <meta property="og:description" content="detrac comunity trailrun">
     <meta property="og:type" content="website">
-  <script>
+  <!-- <script>
     function gdprConfirmed() {
         return true;
     }
@@ -111,7 +112,7 @@
                 {'contact': 'contact'}
             );
         });
-    </script>
+    </script> -->
 <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body data-path-to-root="../" data-include-products="false" class="u-body u-xl-mode" data-lang="en"><header class="u-black u-clearfix u-header u-sticky u-sticky-7b01 u-valign-middle-md u-valign-middle-sm u-valign-middle-xs u-header" id="sec-c8ec" data-animation-name="" data-animation-duration="0" data-animation-delay="0" data-animation-direction=""><div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
         <div class="u-gutter-0 u-layout">
@@ -162,238 +163,333 @@
                     <div class="u-black u-menu-overlay u-opacity u-opacity-70"></div>
                   </div>
                 </nav>
-                <a href="#" class="u-align-center-xs u-btn u-btn-round u-button-style u-custom-color-3 u-hover-palette-4-base u-radius u-btn-1"><span class="u-file-icon u-icon"><img src="../images/150005.png" alt=""></span>&nbsp;SIGN
+                <a href="./Login.html" class="u-align-center-xs u-btn u-btn-round u-button-style u-custom-color-3 u-hover-palette-4-base u-radius u-btn-1"><span class="u-file-icon u-icon"><img src="../images/150005.png" alt=""></span>&nbsp;SIGN
                 </a>
               </div>
             </div>
           </div>
         </div>
       </div></header>
-    <section class="u-align-center u-clearfix u-grey-50 u-section-1" id="sec-aec3">
-      <div class="u-clearfix u-sheet u-sheet-1">
-        <h2 class="u-align-center u-custom-font u-font-montserrat u-text u-text-default u-text-white u-text-1">Registration Form</h2>
-        <div class="u-form u-radius-20 u-white u-form-1">
-          <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-5 u-form-vertical u-inner-form" source="email" name="form" style="padding: 31px;">
-            <p class="u-align-left u-form-group u-form-text u-label-top u-text u-text-2"> PARTICIPANT INFORMATION</p>
-            <div class="u-border-3 u-border-custom-color-6 u-form-group u-form-line u-label-top u-line u-line-horizontal u-line-1"></div>
-            <div class="u-form-group u-form-select u-label-top u-form-group-3">
-              <label for="select-eaad" class="u-label u-spacing-100 u-text-custom-color-6 u-label-1">Category</label>
-              <div class="u-form-select-wrapper">
-                <select id="select-eaad" name="select" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10">
-                  <option value="Fun Trail 5 KM" data-calc="">Fun Trail 5 KM</option>
-                  <option value="FUN Trail 10 KM" data-calc="">FUN Trail 10 KM</option>
-                  <option value="Trail 20 KM" data-calc="">Trail 20 KM</option>
-                  <option value="Trail 40 KM" data-calc="">Trail 40 KM</option>
-                  <option value="Ultra Trail 80 KM" data-calc="">Ultra Trail 80 KM</option>
-                </select>
-                <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
+      <div class="custom-class">
+        <div class="form-container">
+            <div class="progress-bar">
+                <div class="progress-circle" id="circle1" onclick="goToSection(1)">1</div>
+                <div class="progress-circle" id="circle2" onclick="goToSection(2)">2</div>
+                <div class="progress-circle" id="circle3" onclick="goToSection(3)">3</div>
+                <div class="progress-circle" id="circle4" onclick="goToSection(4)">4</div>
+                <div class="progress-circle" id="circle5" onclick="goToSection(5)">5</div>
+            </div>
+            <form id="registrationForm">
+                <!-- Section 1: Registrasi User -->
+                <div class="form-section" id="section1">
+                  <h2>Registrasi User</h2>
+                  <label for="username">Username</label>
+                  <input type="text" id="username" name="username" required>
+              
+                  <label for="password">Password</label>
+                  <input type="password" id="password" name="password" required oninput="checkPasswordStrength()">
+                  <div id="password-strength" style="margin-bottom: 10px;">
+                      Password Strength: <span id="strength-text"></span>
+                  </div>
+              
+                  <label for="repeatPassword">Repeat Password</label>
+                  <input type="password" id="repeatPassword" name="repeatPassword" required oninput="validatePassword()">
+                  <span id="password-error" class="error-message" style="display: none;">Passwords do not match</span>
+              
+                  <label for="email">Email</label>
+                  <input type="email" id="email" name="email" required>
+              
+                  <button type="button" onclick="nextSection(1)">Next</button>
               </div>
-            </div>
-            <div class="u-form-group u-form-name u-form-partition-factor-2 u-label-top u-form-group-4">
-              <label for="name-4c18" class="u-label u-spacing-100 u-text-custom-color-6 u-label-2">First Name</label>
-              <input type="text" id="name-4c18" name="name" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required="">
-            </div>
-            <div class="u-form-group u-form-name u-form-partition-factor-2 u-label-top u-form-group-5">
-              <label for="name-17e7" class="u-label u-spacing-100 u-text-custom-color-6 u-label-3">Last Name</label>
-              <input type="text" id="name-17e7" name="name-5" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required="">
-            </div>
-            <div class="u-form-group u-form-input-layout-horizontal u-form-radiobutton u-label-top">
-              <label class="u-label u-spacing-100 u-text-custom-color-6 u-label-4">Gender</label>
-              <div class="u-form-radio-button-wrapper">
-                <div class="u-input-row">
-                  <input type="radio" name="radiobutton" value="Men" required="required" data-calc="" class="u-field-input">
-                  <label class="u-block-152e-34 u-field-label u-spacing-100 u-text-custom-color-6" for="radiobutton" style="width: 403px; font-size: 0.875rem">Men</label>
+              
+              
+    
+                <!-- Section 2: Participant Information -->
+                <div class="form-section" id="section2">
+                    <h2>Participant Information</h2>
+                    <div class="form-group">
+                      <div class="form-item">
+                        <label for="category">Category</label>
+                        <select id="category" name="category" required>
+                            <option value="" disabled selected>Select your Category</option>
+                            <option value="Fun Trail 5 KM" data-calc="">Fun Trail 5 KM</option>
+                            <option value="FUN Trail 10 KM" data-calc="">FUN Trail 10 KM</option>
+                            <option value="Trail 20 KM" data-calc="">Trail 20 KM</option>
+                            <option value="Trail 40 KM" data-calc="">Trail 40 KM</option>
+                            <option value="Ultra Trail 80 KM" data-calc="">Ultra Trail 80 KM</option>
+                        </select>
+                      </div>
+                        <div class="form-item">
+                            <label for="firstName">First Name</label>
+                            <input type="text" id="firstName" name="firstName" required>
+                        </div>
+                        <div class="form-item">
+                          <label for="lastName">Last Name</label>
+                          <input type="text" id="lastName" name="lastName" required>
+                      </div>
+                        <div class="form-item">
+                          <label for="gender">Gender</label>
+                          <select id="gender" name="gender" required>
+                              <option value="" disabled selected>Select your gender</option>
+                              <option value="male">Male</option>
+                              <option value="female">Female</option>
+                          </select>
+                      </div>
+                      
+                        <div class="form-item">
+                            <label for="dob">Date of Birth</label>
+                            <input type="date" id="dob" name="dob" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="participantEmail">Email</label>
+                            <input type="email" id="participantEmail" name="participantEmail" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="instagram">Instagram</label>
+                            <input type="text" id="instagram" name="instagram">
+                        </div>
+                        <div class="form-item">
+                            <label for="phoneNumber">Phone Number</label>
+                            <input type="text" id="phoneNumber" name="phoneNumber" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="passport">Passport / KITAS</label>
+                            <input type="text" id="passport" name="passport">
+                        </div>
+                        <div class="form-item">
+                            <label for="citizens">Citizens</label>
+                            <input type="text" id="citizens" name="citizens" required>
+                        </div>
+                        <div class="form-item full-width">
+                            <label for="address">Full Address</label>
+                            <textarea id="address" name="address" required></textarea>
+                        </div>
+                        <div class="form-item">
+                            <label for="town">Town</label>
+                            <input type="text" id="town" name="town" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="province">Province</label>
+                            <input type="text" id="province" name="province" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="zipCode">Zip Code</label>
+                            <input type="text" id="zipCode" name="zipCode" required>
+                        </div>
+                        <div class="form-item">
+                            <label for="community">Community</label>
+                            <input type="text" id="community" name="community">
+                        </div>
+                        <div class="form-item">
+                            <label for="voucher">Voucher</label>
+                            <input type="text" id="voucher" name="voucher">
+                        </div>
+                    </div>
+                    <button type="button" onclick="nextSection(2)">Next</button>
                 </div>
-                <div class="u-input-row">
-                  <input type="radio" name="radiobutton" value="Women" required="required" data-calc="" class="u-field-input">
-                  <label class="u-block-152e-35 u-field-label u-spacing-100 u-text-custom-color-6" for="radiobutton" style="width: 403px; font-size: 0.875rem">Women</label>
+    
+                <!-- Section 3: T-Shirt -->
+                <div class="form-section" id="section3">
+                    <h2>T-Shirt Size</h2>
+                    <label for="tshirtSize">Size Tshirt</label>
+                    <select id="tshirtSize" name="tshirtSize" required>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                        <option value="XXL">XXL</option>
+                    </select>
+    
+                    <button type="button" onclick="nextSection(3)">Next</button>
                 </div>
-              </div>
-            </div>
-            <div class="u-form-date u-form-group u-label-top u-form-group-7">
-              <label for="date-6e4c" class="u-label u-spacing-100 u-text-custom-color-6 u-label-5">Date of birth</label>
-              <input type="text" readonly="readonly" placeholder="MM.DD.YYYY" id="date-6e4c" name="date" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required="" data-date-format="mm.dd.yyyy">
-            </div>
-            <div class="u-form-email u-form-group u-label-top u-form-group-8">
-              <label for="email-1f78" class="u-label u-spacing-100 u-text-custom-color-6 u-label-6">Email</label>
-              <input type="email" id="email-1f78" name="email" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required="">
-            </div>
-            <div class="u-form-group u-form-url u-label-top u-form-group-9">
-              <label for="url-8a7b" class="u-label u-spacing-100 u-text-custom-color-6 u-label-7">Instagram</label>
-              <input type="url" pattern="^((https?|ftp)://)?[^\s/$.?#]*\.[^\s]*$" id="url-8a7b" name="url" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required="" placeholder="https://www.instagram.com/name">
-            </div>
-            <div class="u-form-group u-form-phone u-label-top u-form-group-10">
-              <label for="phone-4692" class="u-label u-spacing-100 u-text-custom-color-6 u-label-8">Phone Number</label>
-              <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" id="phone-4692" name="phone" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required="">
-            </div>
-            <div class="u-form-group u-label-top u-form-group-11">
-              <label for="text-2933" class="u-label u-spacing-100 u-text-custom-color-6 u-label-9">Passport / KITAS</label>
-              <input type="text" id="text-2933" name="text" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10">
-            </div>
-            <div class="u-form-group u-form-name u-label-top u-form-group-12">
-              <label for="name-02b7" class="u-label u-spacing-100 u-text-custom-color-6 u-label-10">Citizens</label>
-              <input type="text" id="name-02b7" name="name-1" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required="">
-            </div>
-            <div class="u-form-group u-form-message u-label-top">
-              <label for="message-4c18" class="u-label u-spacing-100 u-text-custom-color-6 u-label-11">Full Address</label>
-              <textarea rows="4" cols="50" id="message-4c18" name="message" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required=""></textarea>
-            </div>
-            <div class="u-form-group u-form-name u-label-top u-form-group-14">
-              <label for="name-9f2d" class="u-label u-spacing-100 u-text-custom-color-6 u-label-12">Town</label>
-              <input type="text" id="name-9f2d" name="name-2" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required="">
-            </div>
-            <div class="u-form-group u-form-name u-label-top u-form-group-15">
-              <label for="name-ac9d" class="u-label u-spacing-100 u-text-custom-color-6 u-label-13">Province</label>
-              <input type="text" id="name-ac9d" name="name-3" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required="">
-            </div>
-            <div class="u-form-group u-label-top u-form-group-16">
-              <label for="text-84b6" class="u-label u-spacing-100 u-text-custom-color-6 u-label-14">Zip Code</label>
-              <input type="text" placeholder="" id="text-84b6" name="text-1" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10">
-            </div>
-            <div class="u-form-group u-label-top u-form-group-17">
-              <label for="text-572a" class="u-label u-spacing-100 u-text-custom-color-6 u-label-15">Community</label>
-              <input type="text" placeholder="" id="text-572a" name="text-2" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10">
-            </div>
-            <div class="u-border-9 u-border-white u-form-group u-form-line u-label-top u-line u-line-horizontal u-line-2"></div>
-            <div class="u-form-group u-label-top u-form-group-19">
-              <label for="text-472c" class="u-label u-spacing-100 u-text-custom-color-6 u-label-16">Voucher</label>
-              <input type="text" placeholder="Only community" id="text-472c" name="text-9" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10">
-            </div>
-            <p class="u-align-left u-form-group u-form-text u-label-top u-text u-text-3"> T-SHIRT</p>
-            <div class="u-border-3 u-border-custom-color-6 u-form-group u-form-line u-label-top u-line u-line-horizontal u-line-3"></div>
-            <div class="u-form-checkbox-group u-form-group u-form-input-layout-horizontal u-label-top u-form-group-22">
-              <label class="u-label u-spacing-100 u-text-custom-color-6 u-label-17">Size Tshirt</label>
-              <div class="u-form-checkbox-group-wrapper">
-                <div class="u-input-row">
-                  <input id="field-0421" type="checkbox" value="XS" name="checkbox[]" data-calc="" class="u-field-input">
-                  <label class="u-block-152e-78 u-field-label u-spacing-100 u-text-custom-color-6" for="field-0421" style="width: 403px; font-size: 0.875rem">XS</label>
+    
+                <!-- Section 4: Medical History -->
+                <div class="form-section" id="section4">
+                    <h2>Medical History</h2>
+                    <label for="previousParticipation">Have you ever participated in an event before?</label>
+                    <input type="text" id="previousParticipation" name="previousParticipation">
+    
+                    <label for="linkResult">Link Result</label>
+                    <input type="text" id="linkResult" name="linkResult">
+    
+                    <label for="bloodType">Blood Type</label>
+                    <input type="text" id="bloodType" name="bloodType" required>
+    
+                    <label for="illness">Do you have any illnesses that need attention during this event?</label>
+                    <textarea id="illness" name="illness"></textarea>
+    
+                    <label for="allergies">Do you have any allergies?</label>
+                    <textarea id="allergies" name="allergies"></textarea>
+    
+                    <button type="button" onclick="nextSection(4)">Next</button>
                 </div>
-                <div class="u-input-row">
-                  <input id="field-b950" type="checkbox" value="S" name="checkbox[]" data-calc="" class="u-field-input">
-                  <label class="u-block-152e-79 u-field-label u-spacing-100 u-text-custom-color-6" for="field-b950" style="width: 403px; font-size: 0.875rem">S</label>
+    
+                <!-- Section 5: Medical Contact Person -->
+                <div class="form-section" id="section5">
+                    <h2>Medical Contact Person</h2>
+                    <label for="contactName">Name</label>
+                    <input type="text" id="contactName" name="contactName" required>
+    
+                    <label for="relationship">Kinship Relationship</label>
+                    <input type="text" id="relationship" name="relationship" required>
+    
+                    <label for="contactPhoneNumber">Phone Number</label>
+                    <input type="text" id="contactPhoneNumber" name="contactPhoneNumber" required>
+    
+                    <button type="submit">Submit</button>
                 </div>
-                <div class="u-input-row">
-                  <input id="field-5a22" type="checkbox" value="M" name="checkbox[]" data-calc="" class="u-field-input">
-                  <label class="u-block-152e-80 u-field-label u-spacing-100 u-text-custom-color-6" for="field-5a22" style="width: 403px; font-size: 0.875rem">M</label>
-                </div>
-                <div class="u-input-row">
-                  <input id="field-35af" type="checkbox" value="L" name="checkbox[]" data-calc="" class="u-field-input">
-                  <label class="u-block-152e-81 u-field-label u-spacing-100 u-text-custom-color-6" for="field-35af" style="width: 403px; font-size: 0.875rem">L</label>
-                </div>
-                <div class="u-input-row">
-                  <input id="field-e98b" type="checkbox" value="XL" name="checkbox[]" data-calc="" class="u-field-input">
-                  <label class="u-block-152e-82 u-field-label u-spacing-100 u-text-custom-color-6" for="field-e98b" style="width: 403px; font-size: 0.875rem">XL</label>
-                </div>
-                <div class="u-input-row">
-                  <input id="field-6ad4" type="checkbox" value="XXL" name="checkbox[]" data-calc="" class="u-field-input">
-                  <label class="u-block-152e-83 u-field-label u-spacing-100 u-text-custom-color-6" for="field-6ad4" style="width: 403px; font-size: 0.875rem">XXL</label>
-                </div>
-              </div>
-            </div>
-            <p class="u-align-left u-form-group u-form-text u-label-top u-text u-text-4"> &nbsp;​​The selected jersey size cannot be exchanged. <br>T-shirt design and size,&nbsp;&nbsp;<a href="#" class="u-active-none u-border-none u-btn u-button-link u-button-style u-hover-none u-none u-text-palette-1-base u-btn-1">can be seen here.</a>
-              <br>
-            </p>
-            <p class="u-align-left u-form-group u-form-text u-label-top u-text u-text-5"> MEDICAL HISTORY</p>
-            <div class="u-border-3 u-border-custom-color-6 u-form-group u-form-line u-label-top u-line u-line-horizontal u-line-4"></div>
-            <div class="u-form-group u-form-select u-label-top u-form-group-26">
-              <label for="select-5def" class="u-label u-spacing-100 u-text-custom-color-6 u-label-18">Have you ever participated in an event before?</label>
-              <div class="u-form-select-wrapper">
-                <select id="select-5def" name="select-1" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required="required">
-                  <option value="Yes" data-calc="">Yes</option>
-                  <option value="No" data-calc="">No</option>
-                </select>
-                <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
-              </div>
-            </div>
-            <div class="u-form-group u-form-url u-label-top u-form-group-27">
-              <label for="url-9565" class="u-label u-spacing-100 u-text-custom-color-6 u-label-19">Link Result</label>
-              <input type="url" pattern="^((https?|ftp)://)?[^\s/$.?#]*\.[^\s]*$" id="url-9565" name="url-1" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required="" placeholder="https://www.detrac.id/result">
-            </div>
-            <div class="u-form-group u-label-top u-form-group-28">
-              <label for="text-6342" class="u-label u-spacing-100 u-text-custom-color-6 u-label-20">Blood Type</label>
-              <input type="text" placeholder="" id="text-6342" name="text-5" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10">
-            </div>
-            <div class="u-form-group u-form-select u-label-top u-form-group-29">
-              <label for="select-3ea9" class="u-label u-spacing-100 u-text-custom-color-6 u-label-21">Do you have any illnesses that need attention during this event?</label>
-              <div class="u-form-select-wrapper">
-                <select id="select-3ea9" name="select-3" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10">
-                  <option value="Yes" data-calc="">Yes</option>
-                  <option value="No" data-calc="">No</option>
-                </select>
-                <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
-              </div>
-            </div>
-            <div class="u-form-group u-form-select u-label-top u-form-group-30">
-              <label for="select-715c" class="u-label u-spacing-100 u-text-custom-color-6 u-label-22">Do you have any allergies?</label>
-              <div class="u-form-select-wrapper">
-                <select id="select-715c" name="select-2" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10">
-                  <option value="Yes" data-calc="">Yes</option>
-                  <option value="No" data-calc="">No</option>
-                </select>
-                <svg class="u-caret u-caret-svg" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="16px" height="16px" viewBox="0 0 16 16" style="fill:currentColor;" xml:space="preserve"><polygon class="st0" points="8,12 2,4 14,4 "></polygon></svg>
-              </div>
-            </div>
-            <p class="u-form-group u-form-text u-label-top u-text u-text-6"> Medical contact person </p>
-            <div class="u-form-group u-form-name u-label-top u-form-group-32">
-              <label for="name-9f1e" class="u-label u-spacing-100 u-text-custom-color-6 u-label-23">Name</label>
-              <input type="text" id="name-9f1e" name="name-4" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10">
-            </div>
-            <div class="u-form-group u-label-top u-form-group-33">
-              <label for="text-fac6" class="u-label u-spacing-100 u-text-custom-color-6 u-label-24">Kinship Relationship</label>
-              <input type="text" placeholder="" id="text-fac6" name="text-8" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10">
-            </div>
-            <div class="u-form-group u-form-phone u-label-top u-form-group-34">
-              <label for="phone-815b" class="u-label u-spacing-100 u-text-custom-color-6 u-label-25">Phone Number</label>
-              <input type="tel" pattern="\+?\d{0,3}[\s\(\-]?([0-9]{2,3})[\s\)\-]?([\s\-]?)([0-9]{3})[\s\-]?([0-9]{2})[\s\-]?([0-9]{2})" id="phone-815b" name="phone-1" class="u-border-2 u-border-grey-10 u-grey-10 u-input u-input-rectangle u-radius-10" required="">
-            </div>
-            <div class="u-border-9 u-border-white u-form-group u-form-line u-label-top u-line u-line-horizontal u-line-5"></div>
-            <p class="u-align-left u-form-group u-form-text u-label-top u-text u-text-7"> By agreeing electronically, you acknowledge that you have read and understood all of the conditions<br>provided to you as part of the registration process.
-            </p>
-            <div class="u-form-agree u-form-group u-label-top u-form-group-37">
-              <label class="u-section-1 u-field-label" style=""></label>
-              <input type="checkbox" id="agree-a472" name="agree" class="u-agree-checkbox u-field-input" required="">
-              <label for="agree-a472" class="u-agree-label u-block-152e-22 u-field-label u-spacing-100 u-text-custom-color-6" style="width: 403px; font-size: 0.875rem"> I agree with <a href="Rules-and-Regulation.html" class="u-active-none u-border-none u-btn u-button-style u-hover-none u-none u-text-palette-1-base u-btn-2">Rulers &amp; Regulation uitrailrace</a>
-              </label>
-            </div>
-            <div class="u-align-right u-form-group u-form-submit u-label-top">
-              <input type="submit" value="submit" class="u-form-control-hidden">
-              <a href="#" class="u-active-palette-3-base u-border-active-palette-3-base u-border-hover-palette-3-base u-border-none u-btn u-btn-round u-btn-submit u-button-style u-custom-color-10 u-hover-custom-color-9 u-radius-50 u-btn-3">Submit<br>
-              </a>
-            </div>
-            <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-            <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
-            <input type="hidden" value="" name="recaptchaResponse">
-            <input type="hidden" name="formServices" value="">
-            <input type="hidden" name="siteKey" value="6LdiOUokAAAAAAb0BAEXN-oQgL0DufC2VoIIwpVJ">
-          </form>
+            </form>
         </div>
-      </div>
-    </section>
+    
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                showSection(1);
+            });
+    
+            function showSection(sectionNumber) {
+                const sections = document.querySelectorAll('.form-section');
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+                document.getElementById('section' + sectionNumber).classList.add('active');
+    
+                const circles = document.querySelectorAll('.progress-circle');
+                circles.forEach(circle => {
+                    circle.classList.remove('active');
+                });
+                document.getElementById('circle' + sectionNumber).classList.add('active');
+            }
+    
+            function nextSection(currentSection) {
+              var isValid = true;
+              var inputs = document.querySelectorAll('#section' + currentSection + ' input[required]');
+              inputs.forEach(function(input) {
+                  if (!input.value.trim()) {
+                      isValid = false;
+                  }
+              });
+
+              if (isValid) {
+                  var password = document.getElementById('password').value;
+                  var repeatPassword = document.getElementById('repeatPassword').value;
+                  if (currentSection === 1 && password !== repeatPassword) {
+                      isValid = false;
+                  }
+              }
+
+              if (isValid) {
+                  showSection(currentSection + 1);
+              } else {
+                  Swal.fire({
+                      icon: 'error',
+                      title: 'Incomplete Fields',
+                      text: 'Please fill in all required fields.'
+                  });
+              }
+          }
+
+    
+            function goToSection(sectionNumber) {
+                showSection(sectionNumber);
+            }
+            
+            function checkPasswordStrength() {
+        var password = document.getElementById("password");
+        var passwordStrength = document.getElementById("strength-text");
+    
+        var strength = ["Very Weak", "Weak", "Medium", "Strong", "Very Strong"];
+        var colors = ["very-weak", "weak", "medium", "strong", "very-strong"];
+    
+        var complexity = 0;
+        var lowercaseRegex = /[a-z]/;
+        var uppercaseRegex = /[A-Z]/;
+        var numberRegex = /\d/;
+        var symbolRegex = /[!@#$%^&*]/;
+    
+        if (password.value.length >= 8 && lowercaseRegex.test(password.value) && numberRegex.test(password.value)) {
+            complexity = 1;
+        }
+    
+        if (password.value.length >= 8 && lowercaseRegex.test(password.value) && !numberRegex.test(password.value)) {
+            complexity = 0;
+        }
+    
+        if (password.value.length >= 8 && lowercaseRegex.test(password.value) && numberRegex.test(password.value) && symbolRegex.test(password.value)) {
+            complexity = 3;
+        }
+    
+        if (password.value.length >= 8 && lowercaseRegex.test(password.value) && uppercaseRegex.test(password.value) && numberRegex.test(password.value) && symbolRegex.test(password.value)) {
+            complexity = 4;
+        }
+    
+        passwordStrength.innerHTML = strength[complexity];
+        passwordStrength.className = colors[complexity];
+    }
     
     
     
+          function validatePassword() {
+              var password = document.getElementById("password");
+              var repeatPassword = document.getElementById("repeatPassword");
+              var passwordError = document.getElementById("password-error");
     
-    <footer class="u-align-center u-clearfix u-custom-color-11 u-footer u-valign-middle u-footer" id="sec-e767"><div class="data-layout-selected u-clearfix u-expanded-width u-layout-wrap u-layout-wrap-1">
-        <div class="u-gutter-0 u-layout">
-          <div class="u-layout-row">
-            <div class="u-container-style u-layout-cell u-size-60 u-layout-cell-1">
-              <div class="u-container-layout u-container-layout-1">
-                <div class="u-border-5 u-border-custom-color-3 u-expanded-width u-line u-line-horizontal u-line-1"></div>
-                <div class="u-clearfix u-container-align-center u-group-elements u-group-elements-1">
-                  <img class="u-expanded u-image u-image-contain u-image-default" src="../images/UITrailRace-021.png" alt="" data-image-width="728" data-image-height="294">
-                </div>
-                <div class="u-social-icons u-spacing-10 u-social-icons-1">
-                  <a class="u-social-url" title="instagram" target="_blank" href="https://www.instagram.com/diengcalderarace"><span class="u-icon u-social-icon u-social-instagram u-text-black u-icon-1"><svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 112 112" style=""><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-345e"></use></svg><svg class="u-svg-content" viewBox="0 0 112 112" x="0" y="0" id="svg-345e"><circle fill="currentColor" cx="56.1" cy="56.1" r="55"></circle><path fill="#FFFFFF" d="M55.9,38.2c-9.9,0-17.9,8-17.9,17.9C38,66,46,74,55.9,74c9.9,0,17.9-8,17.9-17.9C73.8,46.2,65.8,38.2,55.9,38.2
-z M55.9,66.4c-5.7,0-10.3-4.6-10.3-10.3c-0.1-5.7,4.6-10.3,10.3-10.3c5.7,0,10.3,4.6,10.3,10.3C66.2,61.8,61.6,66.4,55.9,66.4z"></path><path fill="#FFFFFF" d="M74.3,33.5c-2.3,0-4.2,1.9-4.2,4.2s1.9,4.2,4.2,4.2s4.2-1.9,4.2-4.2S76.6,33.5,74.3,33.5z"></path><path fill="#FFFFFF" d="M73.1,21.3H38.6c-9.7,0-17.5,7.9-17.5,17.5v34.5c0,9.7,7.9,17.6,17.5,17.6h34.5c9.7,0,17.5-7.9,17.5-17.5V38.8
-C90.6,29.1,82.7,21.3,73.1,21.3z M83,73.3c0,5.5-4.5,9.9-9.9,9.9H38.6c-5.5,0-9.9-4.5-9.9-9.9V38.8c0-5.5,4.5-9.9,9.9-9.9h34.5
-c5.5,0,9.9,4.5,9.9,9.9V73.3z"></path></svg></span>
-                  </a>
-                </div>
-                <p class="u-small-text u-text u-text-variant u-text-1">UITRAILRACE © 2024</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div></footer>
-  
-</body></html>
+              if (password.value !== repeatPassword.value) {
+                  passwordError.style.display = "block";
+              } else {
+                  passwordError.style.display = "none";
+              }
+          }
+    
+    
+          function nextSection(sectionNumber) {
+        var inputs = document.querySelectorAll('#section' + sectionNumber + ' input[required]');
+        var isValid = true;
+    
+        inputs.forEach(function(input) {
+            if (!input.value.trim()) {
+                isValid = false;
+                input.classList.add('error');
+            } else {
+                input.classList.remove('error');
+            }
+        });
+    
+        var password = document.getElementById('password').value;
+        var repeatPassword = document.getElementById('repeatPassword').value;
+        if (password !== repeatPassword) {
+            isValid = false;
+            document.getElementById('password').classList.add('error');
+            document.getElementById('repeatPassword').classList.add('error');
+            Swal.fire({
+                icon: 'error',
+                title: 'Passwords do not match',
+                text: 'Please make sure the passwords match.'
+            });
+        }
+    
+        if (!isValid) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Incomplete Fields',
+                text: 'Please fill in all required fields.'
+            });
+        } else {
+            // Check if this is the last section
+            if (sectionNumber === 5) {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Success',
+                    text: 'Registration successful!'
+                });
+            } else {
+                showSection(sectionNumber + 1);
+            }
+        }
+    }
+    
+         
+        </script>
+    </body>
+    </html>
+    
